@@ -419,13 +419,13 @@ boolean check_hunger(boolean messages_only)
 	{
 		(void) strcpy(hunger_str, "hungry");
 		message("You are beginning to feel hungry.", 0);
-		print_stats(STAT_HUNGER);
+		//print_stats(STAT_HUNGER);
 	}
 	if (rogue.moves_left == WEAK)
 	{
 		(void) strcpy(hunger_str, "weak");
 		message("You're getting weak from hunger.", 1);
-		print_stats(STAT_HUNGER);
+		//print_stats(STAT_HUNGER);
 	}
 	if (rogue.moves_left <= FAINT)
 	{
@@ -433,7 +433,7 @@ boolean check_hunger(boolean messages_only)
 		{
 			(void) strcpy(hunger_str, "faint");
 			message("Your hunger is making you feel faint.", 1);
-			print_stats(STAT_HUNGER);
+			//print_stats(STAT_HUNGER);
 		}
 		n = get_rand(0, (FAINT - rogue.moves_left));
 		if (n > 0)
@@ -454,6 +454,12 @@ boolean check_hunger(boolean messages_only)
 			message(you_can_move_again, 1);
 		}
 	}
+	// Steps left, satiety, starvation countdown
+	sprintf(hunger_str, "S: %d", rogue.moves_left);
+	int row = DROWS - 1;
+	mvaddstr(row, 73, hunger_str);
+	clrtoeol();
+	refresh();
 	if (messages_only)
 	{
 		return(fainted);
