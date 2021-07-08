@@ -10,7 +10,7 @@ SOURCES = hit.c init.c instruct.c inventory.c level.c machdep.c main.c \
 	  room.c save.c score.c special_hit.c throw.c trap.c use.c zap.c
 OBJECTS = $(SOURCES:.c=.o)
 
-CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
+CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall -g -D SAVE_CHEAT
 LDFLAGS = -lncurses
 
 BUILDDIR = ./rpm
@@ -26,7 +26,7 @@ clean:
 	rm -f $(OBJECTS) rogue *.tar.gz
 	rm -rf $(BUILDDIR)
 
-clean:
+clean_score:
 	rm .roguescores
 
 install:

@@ -188,7 +188,7 @@ void restore(char *fname)
 	read_string(login_name, fp);
 	if (strcmp(tbuf, login_name))
 	{
-		clean_up("you're not the original player");
+		//clean_up("you're not the original player");
 	}
 
 	r_read(fp, (char *) &party_room, sizeof(party_room));
@@ -198,7 +198,7 @@ void restore(char *fname)
 	r_read(fp, (char *) &saved_file_id, sizeof(saved_file_id));
 	if (new_file_id != saved_file_id)
 	{
-		clean_up("sorry, saved game is not in the same file");
+		//clean_up("sorry, saved game is not in the same file");
 	}
 	rw_dungeon(fp, 0);
 	r_read(fp, (char *) &foods, sizeof(foods));
@@ -236,8 +236,8 @@ void restore(char *fname)
 
 	if (has_been_touched(&saved_time, &mod_time))
 	{
-		clear();
-		clean_up("sorry, file has been touched");
+		//clear();
+		//clean_up("sorry, file has been touched");
 	}
 	if ((!wizard) && !md_df(fname))
 	{
