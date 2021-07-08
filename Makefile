@@ -23,8 +23,11 @@ rogue: $(OBJECTS)
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f $(OBJECTS) rogue *.tar.gz .roguescores
+	rm -f $(OBJECTS) rogue *.tar.gz
 	rm -rf $(BUILDDIR)
+
+clean:
+	rm .roguescores
 
 install:
 	cp ./rogue $(DESTDIR)/rogue

@@ -46,7 +46,7 @@ void message(char *msg, boolean intrpt)
 		wait_for_ack();
 		check_message();
 	}
-	(void) strcpy(msg_line, msg);
+	(void) strncpy(msg_line, msg, DCOLS);
 	mvaddstr(MIN_ROW - 1, 0, msg);
 	addch(' ');
 	refresh();

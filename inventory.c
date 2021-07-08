@@ -200,9 +200,9 @@ void mix_colors(void)
 	{
 		j = get_rand(0, (POTIONS - 1));
 		k = get_rand(0, (POTIONS - 1));
-		strcpy(t,id_potions[j].title);
-		strcpy(id_potions[j].title,id_potions[k].title);
-		strcpy(id_potions[k].title,t);
+		strncpy(t,id_potions[j].title,128);
+		strncpy(id_potions[j].title,id_potions[k].title,128);
+		strncpy(id_potions[k].title,t,128);
 /*		swap_string(id_potions[j].title, id_potions[k].title);*/
 	}
 }
