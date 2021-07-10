@@ -1,7 +1,7 @@
 # Rogue game for Linux and macOS
 
 ## Description
-Modified Linux Rogue that can run on both Linux and macOS.  
+Modified LinuxRogue v0.3.7 that can run on both Linux and macOS.  
 Some modifications to the game are made e.g. display steps left before starvation.
 
 ## Compilation
